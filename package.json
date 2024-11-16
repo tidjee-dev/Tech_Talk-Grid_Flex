@@ -1,0 +1,20 @@
+{
+  "name": "tech_talk-grid_flex",
+  "version": "1.0.0",
+  "main": "main.ts",
+  "scripts": {
+    "prefix": "postcss styles/styles.css -o styles/styles.css",
+    "sass-watch": "sass --watch styles/scss/app.scss styles/styles.css",
+    "type": "tsc --watch",
+    "build": "sass styles/scss/app.scss styles/styles.css && npm run prefix && tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss-cli": "^11.0.0",
+    "typescript": "^5.6.3"
+  }
+}

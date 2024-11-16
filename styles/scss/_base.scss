@@ -1,0 +1,15 @@
+/**
+ * Base styles
+ */
+@use "variables" as *;
+@use "mixins";
+
+body {
+    background-color: $container-background-color;
+}
+
+.main-container {
+    width: 90%;
+    max-width: $container-width;
+    margin: 0 auto;
+}
