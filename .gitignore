@@ -1,8 +1,6 @@
 # Files
 .env
 package-lock.json
-*.css
-*.css.map
 
 # Directories
 node_modules/
