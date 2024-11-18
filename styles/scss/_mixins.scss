@@ -1,0 +1,19 @@
+@use "variables" as *;
+
+@mixin button {
+  text-decoration: none;
+  color: $color-light;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  background-color: $color-accent;
+  transition: all 0.3s ease;
+
+  &:hover {
+    text-decoration: underline;
+    background-color: $color-light;
+    color: $color-accent;
+    border-color: $color-accent;
+  }
+}

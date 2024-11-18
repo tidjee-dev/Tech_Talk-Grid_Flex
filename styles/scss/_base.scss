@@ -13,3 +13,33 @@ body {
     max-width: $container-width;
     margin: 0 auto;
 }
+
+code {
+    font-family: monospace;
+    line-height: 1.5rem;
+    background-color: $color-dark-subtle;
+    padding: 0.2rem;
+    border-radius: 4px;
+}
+
+.button {
+    @include mixins.button;
+}
+
+a[href^="#"] {
+    scroll-behavior: smooth;
+}
+
+a[href^="#"]:hover {
+    text-decoration: underline;
+}
+
+a[href^="#"]::before {
+    content: " #";
+}
+
+.divider-dark {
+    border: 1px solid $color-dark;
+    width: 75%;
+    margin: 0 auto;
+}

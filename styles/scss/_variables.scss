@@ -1,14 +1,35 @@
-$primary-color: #007BFF;
-$secondary-color: #6C757D;
-$success-color: #28A745;
-$warning-color: #FFC107;
-$danger-color: #DC3545;
-$info-color: #17A2B8;
-$light-color: #F8F9FA;
-$dark-color: #343A40;
+$color-primary: #007BFF;
+$color-secondary: #6C757D;
+$color-success: #28A745;
+$color-warning: #FFC107;
+$color-danger: #DC3545;
+$color-info: #17A2B8;
+$color-light: #F8F9FA;
+$color-dark: #343A40;
+$color-accent: #b300ff;
+$color-primary-subtle: rgba(0, 123, 255, 0.1);
+$color-secondary-subtle: rgba(108, 117, 125, 0.1);
+$color-success-subtle: rgba(40, 167, 69, 0.1);
+$color-warning-subtle: rgba(255, 193, 7, 0.1);
+$color-danger-subtle: rgba(220, 53, 69, 0.1);
+$color-info-subtle: rgba(23, 162, 184, 0.1);
+$color-light-subtle: rgba(248, 249, 250, 0.1);
+$color-dark-subtle: rgba(52, 58, 64, 0.1);
+$color-accent-subtle: rgba(179, 0, 255, 0.1);
 
-$base-font-size: 16px;
-$base-line-height: 1.5;
+
+$font-family: 'Arial', 'Helvetica', sans-serif;
+$font-size: 16px;
+$line-height: 1.5;
 
 $container-width: 1110px;
 $container-background-color: #f2f2f2;
+
+$container-breakpoint-sm: 576px;
+$container-breakpoint-md: 768px;
+$container-breakpoint-lg: 992px;
+$container-breakpoint-xl: 1200px;
+
+$shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+$anchor-offset: 7rem;

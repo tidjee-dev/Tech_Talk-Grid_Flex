@@ -1,70 +1,565 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/styles.css">
-    <title>Accueil | Display Flex vs. Display Grid</title>
-</head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="styles/styles.css" />
+        <title>Accueil | Display Flex vs. Display Grid</title>
+    </head>
 
-<body>
-    <nav>
-        <h2>Flex vs. Grid</h2>
-        <ul>
-            <li>
-                <a class="nav-link" href="./pages/flexbox.html">Flexbox</a>
-            </li>
-            <li>
-                <a class="nav-link" href="./pages/grid.html">Grid</a>
-            </li>
-        </ul>
-    </nav>
+    <body>
+        <header class="header">
+            <nav class="nav-container">
+                <a class="nav-title-link" href="./index.html">
+                    <h2 class="nav-title">Flex vs. Grid</h2>
+                </a>
+                <ul class="nav-list">
+                    <li>
+                        <a class="nav-link" href="index.html">Accueil</a>
+                    </li>
+                    <span class="nav-list-title">Playground:</span>
+                    <li>
+                        <a class="nav-link" href="./pages/flexbox.html">Flexbox</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./pages/grid.html">Grid</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
 
-    <main class="main-container">
-        <h1>Flexbox vs. Grid</h1>
-        <p>
-            Flexbox et Grid sont deux outils indispensables pour la mise en page moderne de sites web. Ils permettent de
-            mettre en page des éléments en une seule direction ou en deux dimensions, ce qui leur permet de rendre le
-            site plus moderne et plus dynamique.
-        </p>
-
-        <section class="flexbox-section">
-            <h3 class="flexbox-section-title">Flexbox</h3>
-            <figure>
-                <img src="./assets/flexbox.png" alt="Flexbox" class="flexbox-section-image">
-                <figcaption>Flexbox</figcaption>
-            </figure>
-            <div class="flexbox-section-description-card">
-                <p>
-                    Flexbox est un outil qui permet de mettre en page des éléments en une seule direction. Il permet de
-                    centrer des éléments horizontalement et verticalement, de mettre en page des éléments en ligne ou en
-                    colonne.
+        <main class="main-container">
+            <section class="hero-container">
+                <h1 class="hero-title">Flexbox vs. Grid</h1>
+                <p class="hero-text">
+                    Découvrez les différences entre Flexbox et Grid, leurs avantages,
+                    leurs inconvénients, et quand les utiliser dans vos projets web.
                 </p>
+                <figure>
+                    <img class="hero-img" src="./assets/img/flex-vs-grid.jpg"
+                         alt="flexbox vs. grid" />
+                    <figcaption class="hero-img-credit">
+                        &copy;
+                        <a href="https://www.tutorjoes.in/css_tutorial/grid_introduction_in_css"
+                           target="_blank">TutorJoes</a>.
+                    </figcaption>
+                </figure>
+            </section>
+
+            <section class="card-container">
+                <article class="card flexbox-card">
+                    <h2 class="card-title">Flexbox</h2>
+                    <p class="card-text">
+                        <strong>Usage :</strong> Alignement en une dimension (ligne
+                        <u>ou</u> colonne).<br />
+                        <strong>Avantages :</strong> Simple, rapide, idéal pour des
+                        composants flexibles.<br />
+                        <strong>Inconvénients :</strong> Limité à un seul axe, pas optimal
+                        pour des layouts complexes.<br />
+                        <strong>Propriétés clés :</strong> <code>flex-direction</code>,
+                        <code>justify-content</code>, <code>align-items</code>.
+                    </p>
+                    <div class="card-btns">
+                        <a class="card-link button" href="#flex-details">Voir plus</a>
+                        <a class="card-link button" href="./pages/flexbox.html"
+                           target="_blank">Tester dans le playground</a>
+                    </div>
+                </article>
+
+                <article class="card grid-card">
+                    <h2 class="card-title">Grid</h2>
+                    <p class="card-text">
+                        <strong>Usage :</strong> Layout en deux dimensions (ligne
+                        <u>et</u> colonne).<br />
+                        <strong>Avantages :</strong> Contrôle total, idéal pour des mises en
+                        page complexes.<br />
+                        <strong>Inconvénients :</strong> Plus complexe à prendre en main,
+                        nécessite de définir une structure rigide à l'avance.<br />
+                        <strong>Propriétés clés :</strong> <code>grid-template-rows</code>,
+                        <code>grid-template-columns</code>, <code>gap</code>.
+                    </p>
+                    <div class="card-btns">
+                        <a class="card-link button" href="#grid-details">Voir plus</a>
+                        <a class="card-link button" href="./pages/grid.html" target="_blank">Tester
+                            dans le playground</a>
+                    </div>
+                </article>
+            </section>
+
+            <div class="details-container">
+                <section class="details" id="flex-details">
+                    <h2 class="details-title details-title-flex">Flexbox</h2>
+                    <p class="details-text">
+                        Pour définir un conteneur Flexbox, utilisez la propriété
+                        <code>display: flex</code>.
+                    </p>
+                    <ul class="details-list">
+                        <li>
+                            <span class="details-list-title">Propriétés sur le conteneur</span>
+                            <ul>
+                                <li class="details-list-item">
+                                    <code>flex-direction</code>: Définit la direction des éléments
+                                    enfants (lignes <u>ou</u>
+                                    colonnes).
+                                </li>
+                                <li class="details-list-item">
+                                    <code>justify-content</code>: Alignement des
+                                    enfants sur .
+                                </li>
+                                <li class="details-list-item">
+                                    <code>align-items</code>: Alignement vertical des enfants.
+                                </li>
+                                <li class="details-list-item">
+                                    <code>flex-wrap</code>: Gestion du retour de ligne.
+                                </li>
+                                <li class="details-list-item">
+                                    <code>gap</code>: Espacement entre les enfants.
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="details-list-title">Propriétés sur les enfants</span>
+                            <ul>
+                                <li class="details-list-item">
+                                    <code>order</code>: Change l'ordre des enfants.
+                                </li>
+                                <li class="details-list-item">
+                                    <code>flex-grow</code>: Augmentation de la taille de l'enfant
+                                    par rapport aux autres enfants.
+                                </li>
+                                <li class="details-list-item">
+                                    <code>flex-shrink</code>: Diminution de la taille de l'enfant
+                                    par rapport aux autres enfants.
+                                </li>
+                                <li class="details-list-item">
+                                    <code>flex-basis</code>: Taille initiale de l'enfant.
+                                </li>
+                                <li class="details-list-item">
+                                    <code>align-self</code>: Alignement vertical de l'enfant.
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <table class="details-table">
+                        <thead>
+                            <tr>
+                                <th>Propriété</th>
+                                <th>Valeur par défaut</th>
+                                <th>Valeurs possibles</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="details-table-subtitle details-table-subtitle-flex"
+                                    colspan="3">
+                                    Propriétés sur le conteneur
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>flex-direction</td>
+                                <td><code>flex-direction: row;</code></td>
+                                <td>
+                                    <code>row | column | row-reverse | column-reverse</code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>justify-content</td>
+                                <td><code>justify-content: flex-start;</code></td>
+                                <td>
+                                    <code>flex-start | center | flex-end | space-between |
+                    space-around | space-evenly</code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>align-items</td>
+                                <td><code>align-items: stretch;</code></td>
+                                <td>
+                                    <code>stretch | flex-start | center | flex-end | baseline</code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>flex-wrap</td>
+                                <td><code>flex-wrap: nowrap;</code></td>
+                                <td><code>nowrap | wrap | wrap-reverse</code></td>
+                            </tr>
+                            <tr>
+                                <td>gap</td>
+                                <td><code>gap: 0;</code></td>
+                                <td><code>length [px, em, rem, %]</code></td>
+                            </tr>
+                            <tr>
+                                <td class="details-table-subtitle details-table-subtitle-flex"
+                                    colspan="3">
+                                    Propriétés sur les enfants
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>order</td>
+                                <td><code>order: 0;</code></td>
+                                <td><code>number</code></td>
+                            </tr>
+                            <tr>
+                                <td>flex-grow</td>
+                                <td><code>flex-grow: 0;</code></td>
+                                <td><code>number</code></td>
+                            </tr>
+                            <tr>
+                                <td>flex-shrink</td>
+                                <td><code>flex-shrink: 1;</code></td>
+                                <td><code>number</code></td>
+                            </tr>
+                            <tr>
+                                <td>flex-basis</td>
+                                <td><code>flex-basis: auto;</code></td>
+                                <td><code>auto | length [px, em, rem, %]</code></td>
+                            </tr>
+                            <tr>
+                                <td>align-self</td>
+                                <td><code>align-self: auto;</code></td>
+                                <td>
+                                    <code>auto | stretch | flex-start | center | flex-end |
+                    baseline</code>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section class="details" id="grid-details">
+                    <h2 class="details-title details-title-grid">Grid</h2>
+                    <p class="details-text">
+                        Pour définir un conteneur Grid, utilisez la propriété
+                        <code>display: grid</code>.
+                    </p>
+                    <ul class="details-list">
+                        <li>
+                            <span class="details-list-title">Propriétés sur le conteneur</span>
+                            <ul>
+                                <li class="details-list-item">
+                                    <code>grid-template-columns</code>: Définit la largeur des
+                                    colonnes.
+                                    <sup><a href="#note-1">1</a></sup>
+                                </li>
+                                <li class="details-list-item">
+                                    <code>grid-template-rows</code>: Définit la hauteur des
+                                    lignes.
+                                    <sup><a href="#note-1">1</a></sup>
+                                </li>
+                                <li class="details-list-item">
+                                    <code>grid-template-areas</code>: Définit les zones de la
+                                    grille.
+                                    <sup><a href="#note-1">1</a></sup>
+                                    <sup><a href="#note-3">3</a></sup>
+                                </li>
+                                <li class="details-list-item">
+                                    <code>grid-gap</code>: Espacement entre les enfants.
+                                </li>
+                                <li class="details-list-item">
+                                    <code>grid-column-gap</code>: Espacement entre les colonnes.
+                                </li>
+                                <li class="details-list-item">
+                                    <code>grid-row-gap</code>: Espacement entre les lignes.
+                                </li>
+                                <li class="details-list-item">
+                                    <code>grid-auto-flow</code>: Gestion du retour de ligne.
+                                </li>
+                                <li class="details-list-item">
+                                    <code>justify-items</code>: Alignement horizontal des enfants.
+                                </li>
+                                <li class="details-list-item">
+                                    <code>align-items</code>: Alignement vertical des enfants.
+                                </li>
+                                <li class="details-list-item">
+                                    <code>justify-content</code>: Alignement horizontal des
+                                    colonnes.
+                                </li>
+                                <li class="details-list-item">
+                                    <code>align-content</code>: Alignement vertical des lignes.
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="details-list-title">Propriétés sur les enfants</span>
+                            <ul>
+                                <li class="details-list-item">
+                                    <code>grid-area</code>: Zone de la grille occupée par l'enfant.
+                                    <sup><a href="#note-3">3</a></sup>
+                                </li>
+                                <li class="details-list-item">
+                                    <code>grid-column</code>: Colonne(s) de la grille occupée(s) par
+                                    l'enfant.
+                                    <sup><a href="#note-4">4</a></sup>
+                                </li>
+                                <li class="details-list-item">
+                                    <code>grid-row</code>: Ligne(s) de la grille occupée(s) par
+                                    l'enfant.
+                                    <sup><a href="#note-4">4</a></sup>
+                                </li>
+                                <li class="details-list-item">
+                                    <code>justify-self</code>: Alignement horizontal de l'enfant.
+                                </li>
+                                <li class="details-list-item">
+                                    <code>align-self</code>: Alignement vertical de l'enfant.
+                                </li>
+                                <li class="details-list-item">
+                                    <code>order</code>: Change l'ordre des enfants.
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <table class="details-table">
+                        <thead>
+                            <tr>
+                                <th>Propriété</th>
+                                <th>Valeur par défaut</th>
+                                <th>Valeurs possibles</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="details-table-subtitle details-table-subtitle-grid"
+                                    colspan="3">
+                                    Propriétés sur le conteneur
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    grid-template-columns
+                                </td>
+                                <td><code>grid-template-columns: none;</code></td>
+                                <td>
+                                    <code>
+                                        none | repeat()<sup><a href="#note-2">2</a></sup> | auto
+                                    </code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    grid-template-rows
+                                </td>
+                                <td><code>grid-template-rows: none;</code></td>
+                                <td>
+                                    <code>
+                                        none | repeat()<sup><a href="#note-2">2</a></sup> | auto
+                                    </code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>grid-template-areas</td>
+                                <td><code>grid-template-areas: none;</code></td>
+                                <td>
+                                    <code>none | named areas</code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>grid-gap</td>
+                                <td><code>grid-gap: 0;</code></td>
+                                <td><code>length [px, em, rem, %]</code></td>
+                            </tr>
+                            <tr>
+                                <td>grid-column-gap</td>
+                                <td><code>grid-column-gap: 0;</code></td>
+                                <td><code>length [px, em, rem, %]</code></td>
+                            </tr>
+                            <tr>
+                                <td>grid-row-gap</td>
+                                <td><code>grid-row-gap: 0;</code></td>
+                                <td><code>length [px, em, rem, %]</code></td>
+                            </tr>
+                            <tr>
+                                <td>grid-auto-flow</td>
+                                <td><code>grid-auto-flow: row;</code></td>
+                                <td><code>row | column | dense</code></td>
+                            </tr>
+                            <tr>
+                                <td>justify-items</td>
+                                <td><code>justify-items: stretch;</code></td>
+                                <td><code>stretch | start | end | center</code></td>
+                            </tr>
+                            <tr>
+                                <td>align-items</td>
+                                <td><code>align-items: stretch;</code></td>
+                                <td><code>stretch | start | end | center | baseline</code></td>
+                            </tr>
+                            <tr>
+                                <td>justify-content</td>
+                                <td><code>justify-content: stretch;</code></td>
+                                <td><code>stretch | start | end | center | space-between</code></td>
+                            </tr>
+                            <tr>
+                                <td>align-content</td>
+                                <td><code>align-content: stretch;</code></td>
+                                <td><code>stretch | start | end | center | space-between</code></td>
+                            </tr>
+                            <tr>
+                                <td class="details-table-subtitle details-table-subtitle-grid"
+                                    colspan="3">
+                                    Propriétés sur les enfants
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>grid-area</td>
+                                <td><code>grid-area: auto;</code></td>
+                                <td>
+                                    <code>
+                                        auto | named area<sup><a href="#note-3">3</a></sup>
+                                    </code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>grid-column</td>
+                                <td><code>grid-column: auto;</code></td>
+                                <td><code>auto | integer | span integer</code></td>
+                            </tr>
+                            <tr>
+                                <td>grid-row</td>
+                                <td><code>grid-row: auto;</code></td>
+                                <td><code>auto | integer | span integer</code></td>
+                            </tr>
+                            <tr>
+                                <td>justify-self</td>
+                                <td><code>justify-self: auto;</code></td>
+                                <td><code>auto | start | end | center | stretch</code></td>
+                            </tr>
+                            <tr>
+                                <td>align-self</td>
+                                <td><code>align-self: auto;</code></td>
+                                <td><code>auto | start | end | center | stretch</code></td>
+                            </tr>
+                            <tr>
+                                <td>order</td>
+                                <td><code>order: 0;</code></td>
+                                <td><code>integer</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- note -->
+                    <div class="details-note">
+                        <p id="note-1">
+                            <sup>1</sup> Dans un conteneur CSS Grid, l'unité
+                            <code>fr</code>
+                            représente une fraction de l'espace disponible. Cela permet de
+                            répartir automatiquement l'espace en proportions flexibles et
+                            réactives. Il est néanmoins possible de combiner plusieurs unités
+                            (<code>fr</code>,
+                            <code>%</code>, <code>px</code>, ...) pour obtenir des proportions
+                            plus complexes.
+                        </p>
+                        <p id="note-2">
+                            <sup>2</sup> <code>repeat()</code> est une fonction qui permet de
+                            répeter des valeurs de dimension. Par exemple,
+                            <code>repeat(3, 1fr)</code> représente trois colonnes de largeur
+                            flexible.
+                        </p>
+                        <p id="note-3">
+                            <sup>3</sup> <code>grid-area</code> est une propriété qui permet de
+                            placer un enfant dans une zone particulière de la grille. La valeur
+                            de <code>grid-area</code> doit correspondre au nom d'une zone définie
+                            dans la propriété <code>grid-template-areas</code> du conteneur.
+                            <br>
+                            <strong><u>Ex : </u></strong><br>
+                        <pre>
+<code>/* Conteneur */
+.container {
+    display: grid;
+    grid-template-areas:
+        "header header header"
+        "nav main sidebar"
+        "footer footer footer";
+}
+
+/* Enfants */
+.header {
+    grid-area: header;
+}
+.nav {
+    grid-area: nav;
+}
+.main {
+    grid-area: main;
+}
+.sidebar {
+    grid-area: sidebar;
+}
+.footer {
+    grid-area: footer;
+}
+</code></pre>
+                        </p>
+                        <p id="note-4">
+                            <sup>4</sup> <code>grid-column</code> et <code>grid-row</code> sont
+                            des propriétés qui permettent de placer un enfant dans une ligne ou
+                            une colonne particulière de la grille.<br> La valeur de
+                            <code>grid-column</code> ou <code>grid-row</code> doit correspondre
+                            aux indices des lignes ou des colonnes de la grille. <br>
+                            Si la colonne ou la ligne occupe plusieurs cellules, il faut utiliser
+                            <code>span</code> pour indiquer le nombre de cases qu'elle occupe.
+                            <br>
+                            <strong><u>Ex : </u></strong><br>
+                        <pre>
+<code>&lt;!-- HTML --&gt;
+
+&lt;div class="container"&gt;
+    &lt;div class="child child-2"&gt;1&lt;/div&gt;
+    &lt;div class="child"&gt;2&lt;/div&gt;
+    &lt;div class="child"&gt;3&lt;/div&gt;
+    &lt;div class="child"&gt;4&lt;/div&gt;
+    &lt;div class="child"&gt;5&lt;/div&gt;
+    &lt;div class="child"&gt;6&lt;/div&gt;
+&lt;/div&gt;
+
+<hr class="divider-dark">
+/* CSS */
+
+/* Conteneur */
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 5px;
+}
+
+/* Enfants */
+.child {
+    background-color: lightgray;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+}
+.child-2 {
+    background-color: coral;
+    grid-column: 2 / span 2; /* Occupe 2 colonnes a partir de la 2e */
+    grid-row: 2 / span 2; /* Occupe 2 lignes a partir de la 2e */
+}
+</code></pre>
+                        <figure>
+                            <img src="./assets/img/grid-example.jpg"
+                                 alt="Exemple de grid avec les propriétés grid-column et grid-row et utilisation de span">
+                            <figcaption class="hero-img-credit">Exemple de grid avec les propriétés
+                                <code>grid-column</code> et <code>grid-row</code>et utilisation de
+                                <code>span</code>.
+                            </figcaption>
+                        </figure>
+                        </p>
+                    </div>
+                </section>
             </div>
+        </main>
 
-        </section>
-
-        <section class="grid-section">
-            <h3 class="grid-section-title">Grid</h3>
-            <figure>
-                <img src="./assets/grid.png" alt="Grid" class="grid-section-image">
-                <figcaption>Grid</figcaption>
-            </figure>
-            <div class="grid-section-description-card">
-                <p>
-                    Grid est un outil qui permet de mettre en page des éléments en deux dimensions. Il permet de mettre en
-                    page des éléments en grille et de centrer des éléments horizontalement et verticalement.
-                </p>
-            </div>
-
-        </section>
-
-
-    </main>
-
-
-    <script src="./main.js"></script>
-</body>
+        <footer class="footer-container">
+            <p>&copy; 2024 - Donatien Pinet</p>
+            <hr class="footer-divider" />
+            <ul class="footer-list">
+                <li>
+                    <a class="footer-link" href="https://github.com/tidjee-dev"
+                       target="_blank">GitHub</a>
+                </li>
+            </ul>
+        </footer>
+        <!-- <script src="./main.js"></script> -->
+    </body>
 
 </html>
