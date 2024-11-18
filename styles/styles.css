@@ -55,6 +55,7 @@ body {
 
 code {
   font-family: monospace;
+  font-size: 0.85rem;
   line-height: 1.5rem;
   background-color: rgba(52, 58, 64, 0.1);
   padding: 0.2rem;
@@ -78,7 +79,7 @@ code {
   border-color: #b300ff;
 }
 
-a[href^="#"] {
+a {
   scroll-behavior: smooth;
 }
 
@@ -86,8 +87,14 @@ a[href^="#"]:hover {
   text-decoration: underline;
 }
 
-a[href^="#"]::before {
-  content: " #";
+sup > a {
+  color: #b300ff;
+}
+sup > a:hover {
+  text-decoration: underline;
+}
+sup > a::before {
+  content: "#";
 }
 
 .divider-dark {
@@ -245,6 +252,12 @@ a[href^="#"]::before {
 .card-text {
   font-size: 1.2rem;
   line-height: 1.5;
+  text-align: justify;
+}
+.card-text span {
+  display: block;
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 .card-btns {
@@ -315,6 +328,7 @@ a[href^="#"]::before {
 }
 .details-list-item {
   margin-bottom: 0.5rem;
+  text-align: justify;
 }
 .details-note {
   font-size: 0.9rem;
@@ -326,6 +340,62 @@ a[href^="#"]::before {
 }
 .details-note p {
   padding: 0.5rem 0;
+}
+.details-note .grid-example-container-1 {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 50px auto 50px;
+  grid-template-areas: "header header header" "nav main sidebar" "footer footer footer";
+  height: 500px;
+  padding: 10px;
+  border: 1px solid #343A40;
+  border-radius: 5px;
+}
+.details-note .grid-example-container-1 p {
+  height: 100%;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.details-note .grid-example-container-1 .header {
+  grid-area: header;
+  background-color: lightblue;
+}
+.details-note .grid-example-container-1 .nav {
+  grid-area: nav;
+  background-color: lightcoral;
+}
+.details-note .grid-example-container-1 .main {
+  grid-area: main;
+  background-color: lightgreen;
+}
+.details-note .grid-example-container-1 .sidebar {
+  grid-area: sidebar;
+  background-color: lightpink;
+}
+.details-note .grid-example-container-1 .footer {
+  grid-area: footer;
+  background-color: lightskyblue;
+}
+.details-note .grid-example-container-2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 5px;
+}
+.details-note .grid-example-container-2 .child {
+  background-color: lightgray;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+.details-note .grid-example-container-2 .child-2 {
+  background-color: coral;
+  grid-column: 2/span 2;
+  grid-row: 2/span 2;
 }
 .details-table {
   width: 100%;

@@ -16,6 +16,7 @@ body {
 
 code {
     font-family: monospace;
+    font-size: 0.85rem;
     line-height: 1.5rem;
     background-color: $color-dark-subtle;
     padding: 0.2rem;
@@ -26,7 +27,7 @@ code {
     @include mixins.button;
 }
 
-a[href^="#"] {
+a {
     scroll-behavior: smooth;
 }
 
@@ -34,8 +35,16 @@ a[href^="#"]:hover {
     text-decoration: underline;
 }
 
-a[href^="#"]::before {
-    content: " #";
+sup>a {
+    color: $color-accent;
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+    &::before {
+        content: "#";
+    }
 }
 
 .divider-dark {
