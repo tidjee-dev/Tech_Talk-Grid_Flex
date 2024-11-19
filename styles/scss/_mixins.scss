@@ -17,3 +17,10 @@
     border-color: $color-accent;
   }
 }
+
+@mixin card {
+  background-color: $container-background-color;
+  padding: 0.5rem;
+  border-radius: 5px;
+  box-shadow: $shadow;
+}

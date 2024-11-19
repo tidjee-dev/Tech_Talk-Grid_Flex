@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <title>Flexbox Playground | Flex vs. Grid</title>
+  </head>
+
+  <body class="playground-body">
+    <header class="header">
+      <nav class="nav-container">
+        <a class="nav-title-link" href="../index.html">
+          <h2 class="nav-title">Flex vs. Grid</h2>
+        </a>
+        <ul class="nav-list">
+          <li>
+            <a class="nav-link" href="../index.html">Accueil</a>
+          </li>
+          <span class="nav-list-title">Playground:</span>
+          <li>
+            <a class="nav-link" href="./flexbox.html">Flexbox</a>
+          </li>
+          <li>
+            <a class="nav-link" href="./grid.html">Grid</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main-container playground-main">
+      <h1 class="main-title">Flexbox Playground</h1>
+      <div class="playground-container">
+        <div class="setup-container">
+          <h3 class="setup-title">Conteneur</h3>
+          <div class="setup-property">
+            <h4 class="setup-property-title">Flex Direction</h4>
+            <div class="setup-property-values" id="flex-dir-container">
+              <label for="flex-dir-row">
+                <input type="radio" class="flex-dir-btn" id="flex-dir-row" name="flex-dir"
+                       value="row" checked />
+                Row
+              </label>
+              <label for="flex-dir-row-reverse">
+                <input type="radio" class="flex-dir-btn" id="flex-dir-row-reverse"
+                       value="row-reverse" name="flex-dir" />
+                Row Reverse
+              </label>
+              <label for="flex-dir-column">
+                <input type="radio" class="flex-dir-btn" id="flex-dir-column" value="column"
+                       name="flex-dir" />
+                Column
+              </label>
+              <label for="flex-dir-column-reverse">
+                <input type="radio" class="flex-dir-btn" id="flex-dir-column-reverse"
+                       value="column-reverse" name="flex-dir" />
+                Column Reverse
+              </label>
+            </div>
+          </div>
+
+          <div class="setup-property">
+            <h4 class="setup-property-title">Justify Content</h4>
+            <div class="setup-property-values">
+              <label for="justify-content-start">
+                <input type="radio" class="justify-content-btn" id="justify-content-start"
+                       value="flex-start" name="justify-content" checked />
+                Flex Start
+              </label>
+              <label for="justify-content-center">
+                <input type="radio" class="justify-content-btn" id="justify-content-center"
+                       value="center" name="justify-content" />
+                Center
+              </label>
+              <label for="justify-content-end">
+                <input type="radio" class="justify-content-btn" id="justify-content-end"
+                       value="flex-end" name="justify-content" />
+                Flex End
+              </label>
+              <label for="justify-content-between">
+                <input type="radio" class="justify-content-btn" id="justify-content-between"
+                       value="space-between" name="justify-content" />
+                Space Between
+              </label>
+              <label for="justify-content-around">
+                <input type="radio" class="justify-content-btn" id="justify-content-around"
+                       value="space-around" name="justify-content" />
+                Space Around
+              </label>
+              <label for="justify-content-evenly">
+                <input type="radio" class="justify-content-btn" id="justify-content-evenly"
+                       value="space-evenly" name="justify-content" />
+                Space Evenly
+              </label>
+            </div>
+          </div>
+
+          <div class="setup-property">
+            <h4 class="setup-property-title">Align Items</h4>
+            <div class="setup-property-values">
+              <label for="align-items-stretch">
+                <input type="radio" class="align-items-btn" id="align-items-stretch" value="stretch"
+                       name="align-items" checked />
+                Stretch
+              </label>
+              <label for="align-items-start">
+                <input type="radio" class="align-items-btn" id="align-items-start"
+                       value="flex-start" name="align-items" />
+                Flex Start
+              </label>
+              <label for="align-items-center">
+                <input type="radio" class="align-items-btn" id="align-items-center" value="center"
+                       name="align-items" />
+                Center
+              </label>
+              <label for="align-items-end">
+                <input type="radio" class="align-items-btn" id="align-items-end" value="flex-end"
+                       name="align-items" />
+                Flex End
+              </label>
+              <label for="align-items-baseline">
+                <input type="radio" class="align-items-btn" id="align-items-baseline"
+                       value="baseline" name="align-items" />
+                Baseline
+              </label>
+            </div>
+          </div>
+
+          <div class="setup-property">
+            <h4 class="setup-property-title">Flex Wrap</h4>
+            <div class="setup-property-values">
+              <label for="flex-wrap-nowrap">
+                <input type="radio" class="flex-wrap-btn" id="flex-wrap-nowrap" name="flex-wrap"
+                       value="nowrap" checked />
+                No Wrap
+              </label>
+              <label for="flex-wrap-wrap">
+                <input type="radio" class="flex-wrap-btn" id="flex-wrap-wrap" value="wrap"
+                       name="flex-wrap" />
+                Wrap
+              </label>
+              <label for="flex-wrap-wrap-reverse">
+                <input type="radio" class="flex-wrap-btn" id="flex-wrap-wrap-reverse"
+                       value="wrap-reverse" name="flex-wrap" />
+                Wrap Reverse
+              </label>
+            </div>
+          </div>
+
+          <div class="setup-property">
+            <h4 class="setup-property-title">Gap</h4>
+            <div class="setup-property-values gap-container">
+              <label for="gap-value">
+                <input type="number" class="gap-input" id="gap-value" name="gap" value="0" min="0"
+                       placeholder="0" />
+              </label>
+              <label for="gap-unit">
+                <select class="gap-select" id="gap-unit" name="gap-unit">
+                  <option value="px">px</option>
+                  <option value="%">%</option>
+                  <option value="em">em</option>
+                  <option value="rem">rem</option>
+                </select>
+              </label>
+            </div>
+          </div>
+
+          <h3 class="setup-title">Enfants</h3>
+
+          <div class="setup-property">
+            <h4 class="setup-property-title">Order</h4>
+            <div class="setup-property-values order-container">
+              <label for="order-1-value">
+                1 :
+                <input type="number" class="order-input" id="order-1-value" name="order-1" value="0"
+                       placeholder="0" />
+              </label>
+              <label for="order-2-value">
+                2 :
+                <input type="number" class="order-input" id="order-2-value" name="order-2" value="0"
+                       placeholder="0" />
+              </label>
+              <label for="order-3-value">
+                3 :
+                <input type="number" class="order-input" id="order-3-value" name="order-3" value="0"
+                       placeholder="0" />
+              </label>
+              <label for="order-4-value">
+                4 :
+                <input type="number" class="order-input" id="order-4-value" name="order-4" value="0"
+                       placeholder="0" />
+              </label>
+              <label for="order-5-value">
+                5 :
+                <input type="number" class="order-input" id="order-5-value" name="order-5" value="0"
+                       placeholder="0" />
+              </label>
+              <label for="order-6-value">
+                6 :
+                <input type="number" class="order-input" id="order-6-value" name="order-6" value="0"
+                       placeholder="0" />
+              </label>
+              <label for="order-7-value">
+                7 :
+                <input type="number" class="order-input" id="order-7-value" name="order-7" value="0"
+                       placeholder="0" />
+              </label>
+              <label for="order-8-value">
+                8 :
+                <input type="number" class="order-input" id="order-8-value" name="order-8" value="0"
+                       placeholder="0" />
+              </label>
+              <label for="order-9-value">
+                9 :
+                <input type="number" class="order-input" id="order-9-value" name="order-9" value="0"
+                       placeholder="0" />
+              </label>
+              <label for="order-10-value">
+                10 :
+                <input type="number" class="order-input" id="order-10-value" name="order-10"
+                       value="0" placeholder="0" />
+              </label>
+              <label for="order-11-value">
+                11 :
+                <input type="number" class="order-input" id="order-11-value" name="order-11"
+                       value="0" placeholder="0" />
+              </label>
+              <label for="order-12-value">
+                12 :
+                <input type="number" class="order-input" id="order-12-value" name="order-12"
+                       value="0" placeholder="0" />
+              </label>
+            </div>
+          </div>
+
+          <div class="setup-property">
+            <h4 class="setup-property-title">Flex Grow</h4>
+            <div class="setup-property-values grow-container">
+              <label for="grow-1-value">
+                1 :
+                <input type="number" class="grow-input" id="grow-1-value" name="grow-1" value="0"
+                       placeholder="0" />
+              </label>
+              <label for="grow-2-value">
+                2 :
+                <input type="number" class="grow-input" id="grow-2-value" name="grow-2" value="0"
+                       placeholder="0" />
+              </label>
+              <label for="grow-3-value">
+                3 :
+                <input type="number" class="grow-input" id="grow-3-value" name="grow-3" value="0"
+                       placeholder="0" />
+              </label>
+              <label for="grow-4-value">
+                4 :
+                <input type="number" class="grow-input" id="grow-4-value" name="grow-4" value="0"
+                       placeholder="0" />
+              </label>
+              <label for="grow-5-value">
+                5 :
+                <input type="number" class="grow-input" id="grow-5-value" name="grow-5" value="0"
+                       placeholder="0" />
+              </label>
+              <label for="grow-6-value">
+                6 :
+                <input type="number" class="grow-input" id="grow-6-value" name="grow-6" value="0"
+                       placeholder="0" />
+              </label>
+              <label for="grow-7-value">
+                7 :
+                <input type="number" class="grow-input" id="grow-7-value" name="grow-7" value="0"
+                       placeholder="0" />
+              </label>
+              <label for="grow-8-value">
+                8 :
+                <input type="number" class="grow-input" id="grow-8-value" name="grow-8" value="0"
+                       placeholder="0" />
+              </label>
+              <label for="grow-9-value">
+                9 :
+                <input type="number" class="grow-input" id="grow-9-value" name="grow-9" value="0"
+                       placeholder="0" />
+              </label>
+              <label for="grow-10-value">
+                10 :
+                <input type="number" class="grow-input" id="grow-10-value" name="grow-10" value="0"
+                       placeholder="0" />
+              </label>
+              <label for="grow-11-value">
+                11 :
+                <input type="number" class="grow-input" id="grow-11-value" name="grow-11" value="0"
+                       placeholder="0" />
+              </label>
+              <label for="grow-12-value">
+                12 :
+                <input type="number" class="grow-input" id="grow-12-value" name="grow-12" value="0"
+                       placeholder="0" />
+              </label>
+            </div>
+          </div>
+
+          <div class="setup-property">
+            <h4 class="setup-property-title">Flex Shrink</h4>
+            <div class="setup-property-values shrink-container">
+              <label for="shrink-1-value">
+                1 :
+                <input type="number" class="shrink-input" id="shrink-1-value" name="shrink-1"
+                       value="1" placeholder="1" />
+              </label>
+              <label for="shrink-2-value">
+                2 :
+                <input type="number" class="shrink-input" id="shrink-2-value" name="shrink-2"
+                       value="1" placeholder="1" />
+              </label>
+              <label for="shrink-3-value">
+                3 :
+                <input type="number" class="shrink-input" id="shrink-3-value" name="shrink-3"
+                       value="1" placeholder="1" />
+              </label>
+              <label for="shrink-4-value">
+                4 :
+                <input type="number" class="shrink-input" id="shrink-4-value" name="shrink-4"
+                       value="1" placeholder="1" />
+              </label>
+              <label for="shrink-5-value">
+                5 :
+                <input type="number" class="shrink-input" id="shrink-5-value" name="shrink-5"
+                       value="1" placeholder="1" />
+              </label>
+              <label for="shrink-6-value">
+                6 :
+                <input type="number" class="shrink-input" id="shrink-6-value" name="shrink-6"
+                       value="1" placeholder="1" />
+              </label>
+              <label for="shrink-7-value">
+                7 :
+                <input type="number" class="shrink-input" id="shrink-7-value" name="shrink-7"
+                       value="1" placeholder="1" />
+              </label>
+              <label for="shrink-8-value">
+                8 :
+                <input type="number" class="shrink-input" id="shrink-8-value" name="shrink-8"
+                       value="1" placeholder="1" />
+              </label>
+              <label for="shrink-9-value">
+                9 :
+                <input type="number" class="shrink-input" id="shrink-9-value" name="shrink-9"
+                       value="1" placeholder="1" />
+              </label>
+              <label for="shrink-10-value">
+                10 :
+                <input type="number" class="shrink-input" id="shrink-10-value" name="shrink-10"
+                       value="1" placeholder="1" />
+              </label>
+              <label for="shrink-11-value">
+                11 :
+                <input type="number" class="shrink-input" id="shrink-11-value" name="shrink-11"
+                       value="1" placeholder="1" />
+              </label>
+              <label for="shrink-12-value">
+                12 :
+                <input type="number" class="shrink-input" id="shrink-12-value" name="shrink-12"
+                       value="1" placeholder="1" />
+              </label>
+            </div>
+          </div>
+
+          <div class="setup-property">
+            <h4 class="setup-property-title">Flex Basis</h4>
+            <div class="setup-property-values basis-container">
+              <label for="basis-1-value">
+                1 :
+                <input type="text" class="basis-input" id="basis-1-value" name="basis-1"
+                       value="auto" placeholder="auto" />
+              </label>
+              <label for="basis-2-value">
+                2 :
+                <input type="text" class="basis-input" id="basis-2-value" name="basis-2"
+                       value="auto" placeholder="auto" />
+              </label>
+              <label for="basis-3-value">
+                3 :
+                <input type="text" class="basis-input" id="basis-3-value" name="basis-3"
+                       value="auto" placeholder="auto" />
+              </label>
+              <label for="basis-4-value">
+                4 :
+                <input type="text" class="basis-input" id="basis-4-value" name="basis-4"
+                       value="auto" placeholder="auto" />
+              </label>
+              <label for="basis-5-value">
+                5 :
+                <input type="text" class="basis-input" id="basis-5-value" name="basis-5"
+                       value="auto" placeholder="auto" />
+              </label>
+              <label for="basis-6-value">
+                6 :
+                <input type="text" class="basis-input" id="basis-6-value" name="basis-6"
+                       value="auto" placeholder="auto" />
+              </label>
+              <label for="basis-7-value">
+                7 :
+                <input type="text" class="basis-input" id="basis-7-value" name="basis-7"
+                       value="auto" placeholder="auto" />
+              </label>
+              <label for="basis-8-value">
+                8 :
+                <input type="text" class="basis-input" id="basis-8-value" name="basis-8"
+                       value="auto" placeholder="auto" />
+              </label>
+              <label for="basis-9-value">
+                9 :
+                <input type="text" class="basis-input" id="basis-9-value" name="basis-9"
+                       value="auto" placeholder="auto" />
+              </label>
+              <label for="basis-10-value">
+                10 :
+                <input type="text" class="basis-input" id="basis-10-value" name="basis-10"
+                       value="auto" placeholder="auto" />
+              </label>
+              <label for="basis-11-value">
+                11 :
+                <input type="text" class="basis-input" id="basis-11-value" name="basis-11"
+                       value="auto" placeholder="auto" />
+              </label>
+              <label for="basis-12-value">
+                12 :
+                <input type="text" class="basis-input" id="basis-12-value" name="basis-12"
+                       value="auto" placeholder="auto" />
+              </label>
+            </div>
+          </div>
+
+          <!-- <div class="setup-property">
+            <h4 class="setup-property-title">Align Self</h4>
+            <div class="setup-property-values align-self-container">
+              <label for="align-self-1-value">
+                1 :
+                <select class="align-self-select" id="align-self-1-value" name="align-self-1">
+                  <option value="auto" selected>auto</option>
+                  <option value="stretch">stretch</option>
+                  <option value="flex-start">flex-start</option>
+                  <option value="center">center</option>
+                  <option value="flex-end">flex-end</option>
+                  <option value="baseline">baseline</option>
+                </select>
+              </label>
+            </div>
+          </div> -->
+        </div>
+
+        <!-- <div class="code-container">
+          <h3 class="code-title">Code</h3>
+          <div class="code-content" id="code-content"></div>
+        </div> -->
+
+        <div class="preview-container">
+          <div class="preview-content" id="preview-content">
+            <div class="preview-item">1</div>
+            <div class="preview-item">2</div>
+            <div class="preview-item">3</div>
+            <div class="preview-item">4</div>
+            <div class="preview-item">5</div>
+            <div class="preview-item">6</div>
+            <div class="preview-item">7</div>
+            <div class="preview-item">8</div>
+            <div class="preview-item">9</div>
+            <div class="preview-item">10</div>
+            <div class="preview-item">11</div>
+            <div class="preview-item">12</div>
+          </div>
+        </div>
+      </div>
+
+
+    </main>
+
+    <footer class="footer-container">
+      <p>&copy; 2024 - Donatien Pinet</p>
+      <hr class="footer-divider" />
+      <ul class="footer-list">
+        <li>
+          <a class="footer-link" href="https://github.com/tidjee-dev" target="_blank">GitHub</a>
+        </li>
+      </ul>
+    </footer>
+    <script src="../scripts/flex-playground.js"></script>
+  </body>
+
+</html>
