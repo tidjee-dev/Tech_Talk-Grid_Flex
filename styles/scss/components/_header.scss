@@ -4,6 +4,8 @@
 .header {
   background-color: $color-secondary;
   height: 9rem;
+  display: flex;
+  align-items: center;
 }
 
 .nav-container {
@@ -24,7 +26,7 @@
 }
 
 .nav-title {
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   font-weight: bold;
 
   &-link {
@@ -42,6 +44,7 @@
   margin: 1rem 0;
   display: flex;
   gap: 1rem;
+  font-size: 1.2rem;
 
   &-title {
     font-weight: bold;
