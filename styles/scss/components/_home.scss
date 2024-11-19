@@ -83,6 +83,13 @@
 .card-text {
   font-size: 1.2rem;
   line-height: 1.5;
+  text-align: justify;
+
+  & span {
+    display: block;
+    font-weight: bold;
+    text-decoration: underline;
+  }
 }
 
 .card-btns {
@@ -160,6 +167,7 @@
 
     &-item {
       margin-bottom: 0.5rem;
+      text-align: justify;
     }
   }
 
@@ -173,6 +181,76 @@
 
     & p {
       padding: 0.5rem 0;
+    }
+
+    & .grid-example-container-1 {
+      display: grid;
+      grid-template-columns: 1fr 3fr 1fr;
+      grid-template-rows: 50px auto 50px;
+      grid-template-areas:
+        "header header header"
+        "nav main sidebar"
+        "footer footer footer";
+      height: 500px;
+      padding: 10px;
+      border: 1px solid $color-dark;
+      border-radius: 5px;
+
+      & p {
+        height: 100%;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .header {
+        grid-area: header;
+        background-color: lightblue;
+        height: 100%;
+      }
+
+      .nav {
+        grid-area: nav;
+        background-color: lightcoral;
+      }
+
+      .main {
+        grid-area: main;
+        background-color: lightgreen;
+      }
+
+      .sidebar {
+        grid-area: sidebar;
+        background-color: lightpink;
+      }
+
+      .footer {
+        grid-area: footer;
+        background-color: lightskyblue;
+      }
+    }
+
+    & .grid-example-container-2 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      gap: 5px;
+
+      & .child {
+        background-color: lightgray;
+        border: 1px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+      }
+
+      & .child-2 {
+        background-color: coral;
+        grid-column: 2 / span 2;
+        grid-row: 2 / span 2;
+      }
     }
   }
 
